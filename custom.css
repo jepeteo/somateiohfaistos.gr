@@ -1,0 +1,329 @@
+/* Icons */
+.tameio-card-date:before,
+.tameio-card-addr:before,
+.tameio-card-name:before,
+.tameio-card-apid:before,
+.tameio-card-price:after,
+.tameio-card-total:after{
+	font-family:"ETModules";
+	margin-right:5px;
+	color:#800;
+}
+.tameio-card-date:before {
+	content: "\e023";
+}
+.tameio-card-addr:before {
+	content: "\e081";
+}
+.tameio-card-name:before {
+	content: "\e108";
+}
+.tameio-card-apid:before {
+	content: "\e07b";
+}
+.tameio-card-price:after,
+.tameio-card-total:after {
+	content: "\e100";
+	margin-right:0px;
+	margin-left:5px;
+}
+
+/* Ταμείο */
+.tameio-card {
+  border-bottom: 1px solid #0008;
+  padding: 4px;
+	font-size:16px;
+	display: flex;
+  flex-wrap: wrap;
+	justify-content: space-between;
+}
+.tameio-card-title {
+    width: calc(100% - 160px);
+}
+
+a.tameio-link{
+	color:#000;
+}
+a.tameio-link:hover > div {
+    background-color: #f001;
+    transition: background-color, .4s ease;
+}
+
+.tameio-card-date {
+	width:150px;
+}
+.tameio-card-addr,
+.tameio-card-name {
+	min-width:calc((100% - 300px) /2);
+}
+.tameio-card-price {
+	width:150px;
+	text-align:right;
+}
+
+.tameio-card-total {
+  text-align: end;
+  font-weight: bold;
+	padding:16px 4px 8px;
+}
+/* Filter */
+.tameio-filter {
+  background: #c00;
+  color: white;
+  padding: 0;
+  box-shadow: 0 0 10px #999;
+	border-radius:8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+span.tameio-filter-label {
+  padding: 15px 30px;
+  background: #800;
+	border-radius:8px;
+}
+form.tameio-filter-form {
+  padding: 10px;
+}
+input#evstartdate,
+input#evenddate{
+  padding: 5px;
+  border-radius: 8px;
+  border: 1px solid #456;
+}
+input#tameio-filter-button{
+	padding: 8px;
+  background: #800;
+  color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #0008;
+  margin: 0px 15px;
+	transition: color, background, box-shadow, .2s linear;
+}
+input#tameio-filter-button:hover {
+    background: white;
+    color: #000;
+    border-color: #000;
+}
+
+/* ΕΚΤΥΠΩΣΗ */
+@media print {
+	.post-2006 .et_pb_row.et_pb_row_0,
+	.tameio-filter {
+		display:none !important;
+	}
+	.tameio-card {
+		font-size:12px;
+		line-height:16px;
+	}
+	.tameio-card-date,
+	.tameio-card-price {
+		width:15%;
+	}
+	
+	.tameio-card-name,
+	.tameio-card-addr {
+		width:35%;
+	}
+	.tameio-card-title {
+		width:80%;
+	}
+	.tameio-card-apid{
+		width:20%;
+		text-align:right;
+	}
+}
+
+/* Custom CSS Αποδείξεων*/
+i.fa-solid.fa-euro-sign{
+	font-size:3vh;
+	font-style:italic
+}
+span.eurosign{
+	display:inline-block;
+	width:125px;
+	padding:5px;
+	text-align:left;
+}
+span.europrice {
+	display:inline-block;
+	width:50%;
+	background:#fff;
+	padding:5px;
+	border-radius:10px;
+}
+
+/* ΑΠΟΔΕΙΞΕΙΣ BLOG*/
+.apodeikseis-blog {
+  display: flex;
+	flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.apodeiksi-card{
+	box-shadow: 0 0 10px #aaa;
+  margin: 10px;
+  padding: 20px;
+	width:31%;
+	border-radius:10px;
+	color:black;
+}
+.apodeiksi-card:hover {
+	box-shadow: 0 0 10px #800;
+}
+.apodeiksi-card i.fa-solid {
+	color: #900;
+	width:20px;
+}
+@media screen and (max-width:1279px) {
+	.apodeiksi-card{
+		width:100%;
+	}
+}
+
+/* ΑΝΑΖΗΤΗΣΗ */
+
+.listapodeiksi {
+	width:100%;
+	border: 1px dashed #999;
+	font-size: 14px;
+	line-height:1.5em;
+}
+.listapodeiksi thead {
+	font-weight:bold;
+	text-align:center;
+	background:#cc0000;
+	color:white;
+}
+.listapodeiksi thead td {
+	padding: 4px 0;
+}
+.listapodeiksi tr:nth-child(even) {
+	background: #eee;
+}
+.listapodeiksi tr:hover {
+	background:#800;
+	color:white;
+}
+.listapodeiksi tr td {
+	padding:4px 0;
+	text-align:center;
+}
+
+/* ΕΚΤΥΠΩΣΗ ΑΠΟΔΕΙΞΗΣ & ΚΟΥΜΠΙΑ*/
+.apd-printbutton {
+	background:none;
+	color:#fff;
+	border:none;
+	font-size: 16px;
+}
+.receiptbutton {
+	color:#fff;	
+}
+/*
+button.printbutton,
+.receiptbutton,
+.allreceiptbutton {
+    padding: 10px 15px;
+	margin:5px 0;
+	min-width:275px;
+	max-width:275px;
+
+}
+
+button.printbutton i,
+.receiptbutton i, 
+.allreceiptbutton i{
+	font-size:100%;
+	margin-right:10px;
+}
+.receiptbutton,
+.allreceiptbutton {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	margin:auto;
+	font-size:14px;
+	border:1px solid #888;
+	background:rgb(240,240,240);
+	color:#000;
+	border-radius:2px;
+	padding:5px;
+}
+.receiptbutton:hover,
+.allreceiptbutton:hover{
+	background:rgb(230,230,230);
+}
+
+.allreceiptbutton {
+	margin-top:5px !important;
+}
+*/
+@media print {
+	header, footer, .viewclient i,
+	.printbutton, 
+	.receiptbutton, 
+	.allreceiptbutton,
+	.et_pb_row.et_pb_row_0_tb_body
+	{
+		display:none;
+	}
+	.et_pb_section {
+		padding:1em;
+	}
+	.apodeiksi-3koutia-box{
+		display:flex;
+	}
+	.apodeiksi-3koutia-box div{
+		padding-bottom:0;
+		margin-bottom:0;
+	}
+	.apodeiksi-3koutia {
+	margin:0 1% 0 0;
+	}
+	.apodeiksi-3koutia div {
+		font-size:13px;
+	}
+
+	.kouti-2, 
+	.kouti-3,
+	.kouti-4 {
+		padding:5px 0;
+	}
+.kouti-2 .et_pb_column_1_2.et_pb_column_4_tb_body {
+	max-width:49.5%;
+	margin:0 0.5% 0 0; 
+}
+.kouti-2 .et_pb_column_1_2.et_pb_column_5_tb_body {
+	max-width:49.5%;
+	margin:0 0 0 0.5%
+}
+.kouti-2 .et_pb_column_1_2 h2 {
+		font-size:18px;
+	 padding-top:15px;
+	padding-bottom:15px;
+}
+.kouti-2 .et_pb_column_1_2 h4{
+	font-size:12px;
+}
+.kouti-2 .eurosign {
+	width:auto;
+}
+
+.kouti-4 .et_pb_column_2_3{
+	width:66%;
+	margin:0 1% 0 0;
+}
+.kouti-4 .et_pb_column_1_3{
+	width:33%;
+	margin:0;
+}
+	.listclient{
+		font-size:12px;
+		line-height:1.3em;
+	}
+	.kouti-apodeiksi {
+		box-shadow:0 0 #000 !important;
+	} 
+}
