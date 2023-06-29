@@ -1,4 +1,3 @@
-<?php 
 <?php
 // Define the v_getUrl function
 function v_getUrl() {
