@@ -66,13 +66,13 @@ function showTameio($atts) {
 	$date_before_week = date('Y-m-d H:i:s', $time_before_week);
 
 	//Print form
-	if ($_GET['evstartdate']) {
-		$form_ev_from = date_i18n("Y-m-d", strtotime($_GET['evstartdate']));	
+	if (isset($_GET['evstartdate'])) {
+		$form_ev_from = date_i18n("Y-m-d", strtotime(sanitize_text_field($_GET['evstartdate'])));	
 	} else {
 		$form_ev_from = date_i18n("Y-m-d", $time_before_week);
 	}
-	if ($_GET['evenddate']) {
-		$form_ev_to   = date_i18n("Y-m-d", strtotime($_GET['evenddate']));
+	if (isset($_GET['evenddate'])) {
+		$form_ev_to   = date_i18n("Y-m-d", strtotime(sanitize_text_field($_GET['evenddate'])));
 	} else {
 		$form_ev_to = date_i18n("Y-m-d", $time_now);
 	}
@@ -358,7 +358,9 @@ add_shortcode( 'show-apodeikseis', 'show_apodeikseis_blog' );
 function show_apodeikseis_info( $atts ){
 	
 	ob_start();
-	if($_GET['s'] && !empty($_GET['s'])) { $stext = $_GET['s']; }
+	if (isset($_GET['s']) && !empty($_GET['s'])) {
+		$stext = sanitize_text_field($_GET['s']);
+	}
 
 	$args= array(
 		'post_type' => 'apodeikseis',
@@ -436,13 +438,13 @@ $date_next_week = date('Y-m-d H:i:s', $time_next_week);
 	*/
 
 	//Print form
-	if ($_GET['evstartdate']) {
-		$form_ev_from = date_i18n("Y-m-d", strtotime($_GET['evstartdate']));	
+	if (isset($_GET['evstartdate'])) {
+		$form_ev_from = date_i18n("Y-m-d", strtotime(sanitize_text_field($_GET['evstartdate'])));	
 	} else {
 		$form_ev_from = date_i18n("Y-m-d", $time_now);
 	}
-	if ($_GET['evenddate']) {
-		$form_ev_to   = date_i18n("Y-m-d", strtotime($_GET['evenddate']));
+	if (isset($_GET['evenddate'])) {
+		$form_ev_to   = date_i18n("Y-m-d", strtotime(sanitize_text_field($_GET['evenddate'])));
 	} else {
 		$form_ev_to = date_i18n("Y-m-d", $time_next_week);
 	}
@@ -760,7 +762,9 @@ add_shortcode( 'mobile_other', 'show_mobile_other' );
 function show_client_info( $atts ){
 	
 	ob_start();
-	if($_GET['s'] && !empty($_GET['s'])) { $stext = $_GET['s']; }
+	if (isset($_GET['s']) && !empty($_GET['s'])) {
+		$stext = sanitize_text_field($_GET['s']);
+	}
 
 	$args= array(
 		'post_type' => 'clients',
